@@ -1,5 +1,5 @@
 """
-Web app with CRUD functionalities using MySQL.
+'fast car' rental web app with CRUD functionalities using MySQL.
 """
 from flask import Flask, render_template, redirect, url_for, session, flash, request
 from flask_wtf import FlaskForm
@@ -17,9 +17,9 @@ app = Flask(__name__)
 # db configurations
 
 app.config['MYSQL_HOST'] = '127.0.0.1'
-app.config['MYSQL_USER'] = 'sadiq'
+app.config['MYSQL_USER'] = '[your username]'
 app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'SimpleDbApp'
+app.config['MYSQL_DB'] = 'fast_cars'
 app.secret_key = '423433242'
 
 mysql = MySQL(app)
