@@ -1,6 +1,4 @@
-Here's a simple and appropriate `README.md` for your Flask project:
 
-```markdown
 # Fast Cars - Car Rental System
 
 A car rental web application built with Flask and MySQL.
