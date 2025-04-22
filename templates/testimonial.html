@@ -1,0 +1,143 @@
+{% extends 'app.html' %}
+
+{% block content %}
+<title>Testimonials | FAST CARS </title>
+
+<h2 class="text-center">What Our Clients Say</h2>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ messages[0] }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endif %}
+{% endwith %}
+<div class="container-fluid testimonial pb-5">
+    <div class="container pb-5">
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+            {% for review in reviews %}
+            <div class="testimonial-item">
+                <div class="testimonial-quote">
+                    <i class="fa fa-quote-right fa-2x"></i>
+                </div>
+                <div class="testimonial-inner p-4">
+                    <img src="{{ url_for('static', filename='images/img/qmark1.png') }}" class="img-fluid" alt="">
+                    <div class="ms-4">
+                        <h4>{{ review[0] }}</h4> <!-- Name -->
+                        <p><strong>{{ review[2] }}</strong></p> <!-- Profession -->
+                        <div class="d-flex text-primary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star text-body"></i>
+                            <i class="fas fa-star text-body"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top rounded-bottom p-4">
+                    <p class="mb-0">{{ review[1] }}</p> <!-- Comment -->
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+<!--        <a href="{{ url_for('insert') }}" class="btn btn-primary">Add Review</a>-->
+    </div>
+</div>
+
+<!-- Form to Add New Review -->
+
+
+{% endblock %}
+{#
+<!-- <div class="container-fluid testimonial pb-5">-->
+<!--            <div class="container pb-5">-->
+<!--                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">-->
+<!--                    <h1 class="display-5 text-capitalize mb-3">Our Clients' Reviews<span class="text-primary"> Riviews</span></h1>-->
+<!--                    <p class="mb-0">Our customers' feedback is invaluable to us. They share their experiences, satisfaction, and thoughts about our services, helping us improve and provide the best car rental experience possible.-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">-->
+<!--                    <div class="testimonial-item">-->
+<!--                        <div class="testimonial-quote"><i class="fa fa-quote-right fa-2x"></i>-->
+<!--                        </div>-->
+<!--                        <div class="testimonial-inner p-4">-->
+<!--                            <img src="{{ url_for('static', filename='images/img/testimonial-1.jpg') }}" class="img-fluid" alt="">-->
+<!--                            <div class="ms-4">-->
+<!--                                <h4>Emeka Johnson</h4>-->
+<!--                                <p>Software Engineer</p>-->
+<!--                                <div class="d-flex text-primary">-->
+<!--                                    <i class="fas fa-star"></i>-->
+<!--                                    <i class="fas fa-star"></i>-->
+<!--                                    <i class="fas fa-star"></i>-->
+<!--                                    <i class="fas fa-star"></i>-->
+<!--                                    <i class="fas fa-star text-body"></i>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="border-top rounded-bottom p-4">-->
+<!--                            <p class="mb-0">Great experience! The service was excellent, and everything went smoothly. Highly recommended!</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="testimonial-item">-->
+<!--                        <div class="testimonial-quote"><i class="fa fa-quote-right fa-2x"></i>-->
+<!--                        </div>-->
+<!--                        <div class="testimonial-inner p-4">-->
+<!--                            <img src="{{ url_for('static', filename='images/img/testimonial-2.jpg') }}" class="img-fluid" alt="">-->
+<!--                            <div class="ms-4">-->
+<!--                                <h4>Aisha Bello</h4>-->
+<!--                                <p>Business Consultant</p>-->
+<!--                                <div class="d-flex text-primary">-->
+<!--                                    <i class="fas fa-star"></i>-->
+<!--                                    <i class="fas fa-star"></i>-->
+<!--                                    <i class="fas fa-star"></i>-->
+<!--                                    <i class="fas fa-star text-body"></i>-->
+<!--                                    <i class="fas fa-star text-body"></i>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="border-top rounded-bottom p-4">-->
+<!--                            <p class="mb-0">The service was good, but there’s room for improvement. Overall, a decent experience."</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="testimonial-item">-->
+<!--                        <div class="testimonial-quote"><i class="fa fa-quote-right fa-2x"></i>-->
+<!--                        </div>-->
+<!--                        <div class="testimonial-inner p-4">-->
+<!--                            <img src="{{ url_for('static', filename='images/img/testimonial-1.jpg') }}" class="img-fluid" alt="">-->
+<!--                            <div class="ms-4">-->
+<!--                                <h4>Emeka Okafor</h4>-->
+<!--                                <p>Entrepreneur</p>-->
+<!--                                <div class="d-flex text-primary">-->
+<!--                                    <i class="fas fa-star"></i>-->
+<!--                                    <i class="fas fa-star"></i>-->
+<!--                                    <i class="fas fa-star text-body"></i>-->
+<!--                                    <i class="fas fa-star text-body"></i>-->
+<!--                                    <i class="fas fa-star text-body"></i>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="border-top rounded-bottom p-4">-->
+<!--                            <p class="mb-0">The platform is okay, but the booking process needs to be more user-friendly. Hoping for better updates soon</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+
+<!--{% endblock %}-->
+
+<!--<h2 class="text-center">What Our Clients Say</h2>-->
+
+
+<!--<div class="testimonial-container">-->
+<!--    {% for review in reviews %}-->
+<!--    <div class="testimonial-item">-->
+<!--        <h4>{{ review[0] }}</h4>  &lt;!&ndash; Name &ndash;&gt;-->
+<!--        <p><strong>{{ review[2] }}</strong></p>  &lt;!&ndash; Profession &ndash;&gt;-->
+<!--        <p>{{ review[1] }}</p>  &lt;!&ndash; Comment &ndash;&gt;-->
+<!--    </div>-->
+<!--    {% endfor %}-->
+<!--</div>--> #}
+

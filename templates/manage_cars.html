@@ -1,0 +1,48 @@
+{% extends "app.html" %}
+
+{% block content %}
+
+<!-- Manage Cars Page -->
+<h2 class="mt-5">Manage Cars</h2>
+
+<!-- Add New Car Form -->
+<h3>Add New Car</h3>
+<form action="{{ url_for('add_car') }}" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="car_name" class="form-label">Car Name</label>
+        <input type="text" class="form-control" id="car_name" name="car_name" required>
+    </div>
+    <div class="mb-3">
+        <label for="car_image" class="form-label">Car Image</label>
+        <input type="file" class="form-control" id="car_image" name="car_image" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Car</button>
+</form>
+
+<!-- List of Cars -->
+<h3 class="mt-5">Existing Cars</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Car Name</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for car in cars %}
+        <tr>
+            <td>{{ car.id }}</td>
+            <td>{{ car.name }}</td>
+            <td><img src="{{ url_for('static', filename='car_images/' + car.image) }}" alt="{{ car.name }}" width="100"></td>
+            <td>
+                <form action="{{ url_for('delete_car', car_id=car.id) }}" method="POST" style="display:inline;">
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

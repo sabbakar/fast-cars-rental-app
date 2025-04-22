@@ -1,0 +1,229 @@
+{% extends 'app.html' %}
+
+{% block content %}
+
+<title> Cars | FAST CARS </title>
+
+        <!-- Car categories Start -->        <!-- Car categories Start -->
+        <div class="container-fluid categories pb-5">
+            <div class="container pb-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                    <h1 class="display-5 text-capitalize mb-3">Vehicle <span class="text-primary">Categories</span></h1>
+                    <p class="mb-0">Explore our diverse range of vehicle categories, designed to meet every travel need, whether for business, leisure, or special occasions.
+                    </p>
+                </div>
+                <div class="categories-carousel owl-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="categories-item p-4">
+                        <div class="categories-item-inner">
+                            <div class="categories-img rounded-top">
+                                <img src="{{ url_for('static', filename='images/img/mercedes.jpeg') }}" class="img-fluid w-100 rounded-top" alt="">
+                            </div>
+                            <div class="categories-content rounded-bottom p-4">
+                                <h4>Mercedes Benz R3</h4>
+                                <div class="categories-review mb-4">
+                                    <div class="me-3">4.5 Review</div>
+                                    <div class="d-flex justify-content-center text-secondary">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star text-body"></i>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <h4 class="bg-white text-primary rounded-pill py-2 px-4 mb-0">$99:00/Day</h4>
+                                </div>
+                                <div class="row gy-2 gx-0 text-center mb-4">
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-users text-dark"></i> <span class="text-body ms-1">4 Seat</span>
+                                    </div>
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">AT/MT</span>
+                                    </div>
+                                    <div class="col-4">
+                                        <i class="fa fa-gas-pump text-dark"></i> <span class="text-body ms-1">Petrol</span>
+                                    </div>
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">2015</span>
+                                    </div>
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-cogs text-dark"></i> <span class="text-body ms-1">AUTO</span>
+                                    </div>
+                                    <div class="col-4">
+                                        <i class="fa fa-road text-dark"></i> <span class="text-body ms-1">27K</span>
+                                    </div>
+                                </div>
+<!--                                <a href="#" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>-->
+<!--                            <a href="{{ url_for('book_now') }}" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>-->
+                                <a href="{{ url_for('book_now', car='Mercedes Benz R3') }}" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="categories-item p-4">
+                        <div class="categories-item-inner">
+                            <div class="categories-img rounded-top">
+                               <img src="{{ url_for('static', filename='images/img/corolla1.jpeg') }}" class="img-fluid w-100 rounded-top" alt="">
+                            </div>
+                            <div class="categories-content rounded-bottom p-4">
+                                <h4>Toyota Corolla Cross</h4>
+                                <div class="categories-review mb-4">
+                                    <div class="me-3">3.5 Review</div>
+                                    <div class="d-flex justify-content-center text-secondary">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star text-body"></i>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <h4 class="bg-white text-primary rounded-pill py-2 px-4 mb-0">$128:00/Day</h4>
+                                </div>
+                                <div class="row gy-2 gx-0 text-center mb-4">
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-users text-dark"></i> <span class="text-body ms-1">4 Seat</span>
+                                    </div>
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">AT/MT</span>
+                                    </div>
+                                    <div class="col-4">
+                                        <i class="fa fa-gas-pump text-dark"></i> <span class="text-body ms-1">Petrol</span>
+                                    </div>
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">2015</span>
+                                    </div>
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-cogs text-dark"></i> <span class="text-body ms-1">AUTO</span>
+                                    </div>
+                                    <div class="col-4">
+                                        <i class="fa fa-road text-dark"></i> <span class="text-body ms-1">27K</span>
+                                    </div>
+                                </div>
+<!--                                <a href="#" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>-->
+<!--                                 <a href="{{ url_for('book_now') }}" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>-->
+                                 <a href="{{ url_for('book_now', car='Toyota Corolla Cross') }}" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="categories-item p-4">
+                        <div class="categories-item-inner">
+                            <div class="categories-img rounded-top">
+                                <img src="{{ url_for('static', filename='images/img/tesla1.jpeg') }}" class="img-fluid w-100 rounded-top" alt="">
+                            </div>
+                            <div class="categories-content rounded-bottom p-4">
+                                <h4>Tesla Model</h4>
+                                <div class="categories-review mb-4">
+                                    <div class="me-3">3.8 Review</div>
+                                    <div class="d-flex justify-content-center text-secondary">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star text-body"></i>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <h4 class="bg-white text-primary rounded-pill py-2 px-4 mb-0">$170:00/Day</h4>
+                                </div>
+                                <div class="row gy-2 gx-0 text-center mb-4">
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-users text-dark"></i> <span class="text-body ms-1">4 Seat</span>
+                                    </div>
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">AT/MT</span>
+                                    </div>
+                                    <div class="col-4">
+                                        <i class="fa fa-gas-pump text-dark"></i> <span class="text-body ms-1">Petrol</span>
+                                    </div>
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">2015</span>
+                                    </div>
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-cogs text-dark"></i> <span class="text-body ms-1">AUTO</span>
+                                    </div>
+                                    <div class="col-4">
+                                        <i class="fa fa-road text-dark"></i> <span class="text-body ms-1">27K</span>
+                                    </div>
+                                </div>
+<!--                                <a href="#" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>-->
+<!--                                    <a href="#" class="btn btn-primary rounded-pill d-flex justify-content-center py-3" data-bs-toggle="modal" data-bs-target="#carouselModal">Book Now </a>-->
+<!--                                 <a href="{{ url_for('book_now') }}" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>-->
+                                 <a href="{{ url_for('book_now', car='Tesla Model') }}" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="categories-item p-4">
+                        <div class="categories-item-inner">
+                            <div class="categories-img rounded-top">
+                               <img src="{{ url_for('static', filename='images/img/hyundai.jpeg') }}" class="img-fluid w-100 rounded-top" alt="">
+                            </div>
+                            <div class="categories-content rounded-bottom p-4">
+                                <h4>Hyundai Kona Electric</h4>
+                                <div class="categories-review mb-4">
+                                    <div class="me-3">4.8 Review</div>
+                                    <div class="d-flex justify-content-center text-secondary">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <h4 class="bg-white text-primary rounded-pill py-2 px-4 mb-0">$187:00/Day</h4>
+                                </div>
+                                <div class="row gy-2 gx-0 text-center mb-4">
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-users text-dark"></i> <span class="text-body ms-1">4 Seat</span>
+                                    </div>
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">AT/MT</span>
+                                    </div>
+                                    <div class="col-4">
+                                        <i class="fa fa-gas-pump text-dark"></i> <span class="text-body ms-1">Petrol</span>
+                                    </div>
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-car text-dark"></i> <span class="text-body ms-1">2015</span>
+                                    </div>
+                                    <div class="col-4 border-end border-white">
+                                        <i class="fa fa-cogs text-dark"></i> <span class="text-body ms-1">AUTO</span>
+                                    </div>
+                                    <div class="col-4">
+                                        <i class="fa fa-road text-dark"></i> <span class="text-body ms-1">27K</span>
+                                    </div>
+                                </div>
+<!--                                <a href="#" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>-->
+<!--                            <a href="{{ url_for('book_now') }}" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>-->
+                                <a href="{{ url_for('book_now', car='Hyundai Kona Electric') }}" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Car categories End -->
+
+
+        <!-- Car Steps Start -->
+        <!-- Car Steps End -->
+
+        <!-- Banner Start -->
+        <div class="container-fluid banner py-5 wow zoomInDown" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="banner-item rounded">
+                    <img src="{{ url_for('static', filename='images/img/banner-1.jpg') }}" class="img-fluid rounded w-100" alt="">
+                    <div class="banner-content">
+                        <h2 class="text-primary">Customize Your Ride</h2>
+                        <h1 class="text-white">Need a Specific Car or Service?</h1>
+                        <p class="text-white">Tell us your preferences, and we'll make it happen!</p>
+                        <div class="banner-btn">
+<!--                            <a href="#" class="btn btn-secondary rounded-pill py-3 px-4 px-md-5 me-2">WhatchApp</a>-->
+                             <a href="{{ url_for('contact') }}" class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Banner End -->
+
+        {% endblock %}

@@ -1,0 +1,229 @@
+{% extends "app.html" %}
+
+{% block content %}
+<title>Booking | FAST CARS </title>
+<div class="header-carousel">
+    <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+        <!-- Carousel Indicators -->
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+        </ol>
+
+        <!-- Carousel Slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ url_for('static', filename='images/img/carousel-2.jpg') }}" class="img-fluid w-100" alt="First slide"/>
+                <div class="carousel-caption">
+                    <div class="container py-4">
+                        <div class="row g-5">
+                            <div class="col-lg-6 fadeInLeft animated">
+                                <div class="bg-secondary rounded p-5">
+                                    <h4 class="text-white mb-4">CONTINUE CAR RESERVATION</h4>
+                                    <form method="POST" action="{{ url_for('book_now') }}">
+                                        <!-- Car Selection -->
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <!-- {#    <select class="form-select" name="car_type" aria-label="Select Your Car type"> #} -->
+                                                 <select class="form-select" name="car_name" aria-label="Select Your Car type" required>
+                                                    <option selected d >Select Your Car type</option>
+                                               <!--<option value="Mercedes Benz R3">Mercedes Benz R3</option>
+                                                <option value="Toyota Corolla Cross">Toyota Corolla Cross</option>
+                                                <option value="Tesla Model">Tesla Model</option>
+                                                <option value="Hyundai Kona Electric">Hyundai Kona Electric</option>-->
+
+                                               <option value="Mercedes Benz R3" {% if car=="Mercedes Benz R3" %}selected="selected"{% endif %}>Mercedes Benz R3</option>
+                                                <option value="Toyota Corolla Cross" {% if car=="Toyota Corolla Cross" %}selected="selected"{% endif %}>Toyota Corolla Cross</option>
+                                                <option value="Tesla Model" {% if car=="Tesla Model" %}selected="selected"{% endif %}>Tesla Model</option>
+                                                <option value="Hyundai Kona Electric" {% if car=="Hyundai Kona Electric" %}selected="selected"{% endif %}>Hyundai Kona Electric</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Pickup Location -->
+                                            <div class="col-12">
+                                                <div class="input-group">
+                                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                                        <span class="fas fa-map-marker-alt"></span><span class="ms-1">Pick Up</span>
+                                                    </div>
+                                                    <input class="form-control" type="text" placeholder="Enter a City or Airport" name="pickup_location" required>
+                                                </div>
+                                            </div>
+
+                                            <!-- Drop-off Location -->
+                                            <div class="col-12">
+                                               <!-- <a href="#" class="text-start text-white d-block mb-2">Need a different drop-off location?</a>
+                                                <h6 class="text-start text-white d-block mb-2">Need a different drop-off location?</h6>-->
+                                                <div class="input-group">
+                                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                                        <span class="fas fa-map-marker-alt"></span><span class="ms-1">Drop off</span>
+                                                    </div>
+                                                    <input class="form-control" type="text" placeholder="Enter a City or Airport" name="dropoff_location" required>
+                                                </div>
+                                            </div>
+
+                                            <!-- Date and Time -->
+                                            <div class="col-12">
+                                                <div class="input-group">
+                                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                                        <span class="fas fa-calendar-alt"></span><span class="ms-1">Pick Up</span>
+                                                    </div>
+                                                    <input class="form-control" type="date" name="pickup_date" required>
+                                                    <select class="form-select ms-3" name="pickup_time">
+<!--                                                        <option selected>12:00AM</option>-->
+                                                        <option value="12:00AM" selected>12:00AM</option>
+                                                        <option value="01:00AM">1:00PM</option>
+                                                        <option value="02:00AM">2:00PM</option>
+                                                        <option value="03:00AM">3:00PM</option>
+                                                        <option value="04:00AM">4:00PM</option>
+                                                        <option value="05:00AM">5:00PM</option>
+                                                        <option value="06:00AM">6:00PM</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <div class="input-group">
+                                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
+                                                        <span class="fas fa-calendar-alt"></span><span class="ms-1">Drop off</span>
+                                                    </div>
+                                                    <input class="form-control" type="date" name="dropoff_date" required>
+                                                    <select class="form-select ms-3" name="dropoff_time">
+                                                        <option value="12:00AM" selected>12:00AM</option>
+                                                        <option value="01:00AM">1:00PM</option>
+                                                        <option value="02:00AM">2:00PM</option>
+                                                        <option value="03:00AM">3:00PM</option>
+                                                        <option value="04:00AM">4:00PM</option>
+                                                        <option value="05:00AM">5:00PM</option>
+                                                        <option value="06:00AM">6:00PM</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="additional_info" class="form-label text-white">Additional Information (Optional)</label>
+                                                <textarea class="form-control" id="additional_info" name="additional_info" rows="3" placeholder="Enter any special requests or details"></textarea>
+                                            </div>
+
+                                            <!-- Book Now Button -->
+                                            <div class="col-12">
+                                                <button class="btn btn-light w-100 py-2" type="submit">Book Now</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Text Section -->
+                            <div class="col-lg-6 d-none d-lg-flex fadeInRight animated">
+                                <div class="text-start">
+                                    <h1 class="display-5 text-white">Get 15% off your rental! Choose Your Model</h1>
+                                    <p>Treat yourself in Nigeria</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+               </div>
+    </div>
+</div>
+{% endblock %}
+
+
+<!--            &lt;!&ndash; Second Carousel Item &ndash;&gt;-->
+<!--            <div class="carousel-item">-->
+<!--                <img src="{{ url_for('static', filename='images/img/carousel-1.jpg') }}" class="img-fluid w-100" alt="Second slide"/>-->
+<!--                <div class="carousel-caption">-->
+<!--                    <div class="container py-4">-->
+<!--                        <div class="row g-5">-->
+<!--                            <div class="col-lg-6 fadeInLeft animated">-->
+<!--                                <div class="bg-secondary rounded p-5">-->
+<!--                                    <h4 class="text-white mb-4">CONTINUE CAR RESERVATION</h4>-->
+<!--                                    <form method="POST" action="{{ url_for('book_now') }}">-->
+<!--                                        &lt;!&ndash; Car Selection &ndash;&gt;-->
+<!--                                        <div class="row g-3">-->
+<!--                                            <div class="col-12">-->
+<!--                                                <select class="form-select" name="car_type" aria-label="Select Your Car type">-->
+<!--                                                    <option selected>Select Your Car type</option>-->
+<!--                                                    <option value="1">VW Golf VII</option>-->
+<!--                                                    <option value="2">Audi A1 S-Line</option>-->
+<!--                                                    <option value="3">Toyota Camry</option>-->
+<!--                                                    <option value="4">BMW 320 ModernLine</option>-->
+<!--                                                </select>-->
+<!--                                            </div>-->
+
+<!--                                            &lt;!&ndash; Pickup Location &ndash;&gt;-->
+<!--                                            <div class="col-12">-->
+<!--                                                <div class="input-group">-->
+<!--                                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">-->
+<!--                                                        <span class="fas fa-map-marker-alt"></span><span class="ms-1">Pick Up</span>-->
+<!--                                                    </div>-->
+<!--                                                    <input class="form-control" type="text" placeholder="Enter a City or Airport" name="pickup_location">-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+
+<!--                                            &lt;!&ndash; Drop-off Location &ndash;&gt;-->
+<!--                                            <div class="col-12">-->
+<!--                                                <a href="#" class="text-start text-white d-block mb-2">Need a different drop-off location?</a>-->
+<!--                                                <div class="input-group">-->
+<!--                                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">-->
+<!--                                                        <span class="fas fa-map-marker-alt"></span><span class="ms-1">Drop off</span>-->
+<!--                                                    </div>-->
+<!--                                                    <input class="form-control" type="text" placeholder="Enter a City or Airport" name="dropoff_location">-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+
+<!--                                            &lt;!&ndash; Date and Time &ndash;&gt;-->
+<!--                                            <div class="col-12">-->
+<!--                                                <div class="input-group">-->
+<!--                                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">-->
+<!--                                                        <span class="fas fa-calendar-alt"></span><span class="ms-1">Pick Up</span>-->
+<!--                                                    </div>-->
+<!--                                                    <input class="form-control" type="date" name="pickup_date">-->
+<!--                                                    <select class="form-select ms-3" name="pickup_time">-->
+<!--                                                        <option selected>12:00AM</option>-->
+<!--                                                        <option value="1">1:00AM</option>-->
+<!--                                                        <option value="2">2:00AM</option>-->
+<!--                                                        <option value="3">3:00AM</option>-->
+<!--                                                        <option value="4">4:00AM</option>-->
+<!--                                                        <option value="5">5:00AM</option>-->
+<!--                                                        <option value="6">6:00AM</option>-->
+<!--                                                    </select>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+
+<!--                                            <div class="col-12">-->
+<!--                                                <div class="input-group">-->
+<!--                                                    <div class="d-flex align-items-center bg-light text-body rounded-start p-2">-->
+<!--                                                        <span class="fas fa-calendar-alt"></span><span class="ms-1">Drop off</span>-->
+<!--                                                    </div>-->
+<!--                                                    <input class="form-control" type="date" name="dropoff_date">-->
+<!--                                                    <select class="form-select ms-3" name="dropoff_time">-->
+<!--                                                        <option selected>12:00AM</option>-->
+<!--                                                        <option value="1">1:00AM</option>-->
+<!--                                                        <option value="2">2:00AM</option>-->
+<!--                                                        <option value="3">3:00AM</option>-->
+<!--                                                        <option value="4">4:00AM</option>-->
+<!--                                                        <option value="5">5:00AM</option>-->
+<!--                                                        <option value="6">6:00AM</option>-->
+<!--                                                    </select>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+
+<!--                                            &lt;!&ndash; Book Now Button &ndash;&gt;-->
+<!--                                            <div class="col-12">-->
+<!--                                                <button class="btn btn-light w-100 py-2" type="submit">Book Now</button>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </form>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash; Text Section &ndash;&gt;-->
+<!--                            <div class="col-lg-6 d-none d-lg-flex fadeInRight animated">-->
+<!--                                <div class="text-start">-->
+<!--                                    <h1 class="display-5 text-white">Get 15% off your rental! Choose Your Model</h1>-->
+<!--                                    <p>Treat yourself in USA</p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
