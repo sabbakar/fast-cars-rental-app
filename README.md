@@ -1,6 +1,4 @@
-Sure! Here's a **full GitHub README** for your **Car Rental System** based on the format you've provided. I’ve expanded it to include sections like **Installation**, **Usage**, **Contributing**, and **License**.
-
-```markdown
+```
 # Fast Cars - Car Rental System
 
 A car rental web application built with **Flask** and **MySQL**.
