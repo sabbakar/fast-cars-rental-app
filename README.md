@@ -31,3 +31,8 @@ A car rental web application built with Flask and MySQL.
    source venv/bin/activate
    pip install -r requirements.txt
 
+Create MySQL database
+
+Import schema.sql into your MySQL server.
+
+Update main.py with your MySQL credentials (DB name, user, password).
