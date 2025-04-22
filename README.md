@@ -136,25 +136,11 @@ Once the app is running, you can access the following pages:
 - **User Registration & Login**: Allows users to create an account and log in.
 - **Car Listings**: Displays available cars for rent with their details.
 - **Booking Page**: Allows users to book cars.
+- **Admin Login**: Use the hardcoded email `admin@admin.com` and password `adminpassword` to log in as an admin and access the admin dashboard.
 - **Admin Dashboard**: Admin can view users, bookings, and testimonials.
 - **Contact Page**: For users to get in touch with support.
 
-## Contributing
 
-Contributions are welcome! If you would like to contribute to the Fast Cars project, follow these steps:
-
-1. **Fork the repository**.
-2. **Clone your fork** to your local machine.
-3. Create a **new branch** (`git checkout -b feature-branch`).
-4. Make your changes and **commit** them (`git commit -am 'Add feature'`).
-5. **Push** to your branch (`git push origin feature-branch`).
-6. Open a **Pull Request**.
-
-Please ensure that your code follows the project’s coding standards.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
@@ -163,4 +149,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - XAMPP for setting up MySQL locally
 - The Bootstrap framework for styling
 
-```
