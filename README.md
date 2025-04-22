@@ -1,4 +1,4 @@
-```
+```markdown
 # Fast Cars - Car Rental System
 
 A car rental web application built with **Flask** and **MySQL**.
