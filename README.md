@@ -9,6 +9,7 @@ A car rental web application built with Flask and MySQL.
 - Admin Dashboard  
 - Testimonials  
 - Contact Page
+- Booking page
 
 ## Requirements
 
@@ -23,3 +24,10 @@ A car rental web application built with Flask and MySQL.
    ```bash
    git clone https://github.com/yourusername/fast-cars.git
    cd fast-cars
+
+2. **Set up virtual environment**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+
