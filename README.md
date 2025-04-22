@@ -1,1 +1,0 @@
-# fast-cars-rental-app
