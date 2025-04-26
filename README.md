@@ -4,145 +4,106 @@ A car rental web application built with **Flask** and **MySQL**.
 
 ## Features
 
-- **User Registration & Login**  
-  Users can create accounts and log in to book cars.
+- User registration, login, and account management
+- User dashboard to update account, view bookings and their details
+- Car listings and booking system
+- Admin dashboard to manage cars, users, and bookings
+- Testimonials from users
+- Contact form
 
-- **Car Listings & Booking**  
-  Display cars available for rent with booking functionality.
+### Hardcoded Admin Login:
+  **Email:** `admin@admin.com` | **Password:** `admin`
 
-- **Admin Dashboard**  
-  Admin can manage users, cars, bookings, and testimonials.
-
-- **Testimonials**  
-  Users can leave reviews for rented cars.
-
-- **Contact Page**  
-  A page for users to contact the support team.
-
-- **Booking Page**  
-  Users can view, book, and cancel their bookings.
+## Other UI Features
+  - **Dynamic Navigation Button**: The top-right button switches between "Login" and "Logout" based on the user's session state. If logged in as admin, it becomes "Admin Dashboard."
+  - **Conditional Links**: "Book Now" button appears only when appropriate, with auto-redirection after login.
+  - **Pre-filled Booking Form**: Automatically fills in car details if a user comes from a car listing page.
+  - **Admin-Only Features**: Admin users can manage cars, bookings, and see stats such as total users, bookings, and testimonials.
+  - **Responsive Design**: Fully mobile-friendly.
+  - **Flash Messages**: Success and error feedback displayed to users.
+  - **Smooth Transitions**: Elegant page transitions and user actions.
+  - **Simple Database Structure**: Well-defined tables for managing data.
 
 ## Requirements
 
-- **Python 3**
-- **Flask**  
-  Web framework for Python.
-- **MySQL**  
-  Relational database for storing user and car data.
-- **XAMPP** (or other MySQL setup)  
-  For setting up MySQL locally.
-- **pip**  
-  Python package installer.
+- Python 3
+- Flask
+- MySQL
+- pip
+- XAMPP (or any MySQL server)
 
 ## Setup Instructions
 
-### 1. Clone the repository
-Clone the repository to your local machine using the following command:
+1. **Clone repository:**
+   ```bash
+   git clone https://github.com/sabbakar/fast-cars-rental-app.git
+   cd fast-cars-rental-app
+   ```
 
-```bash
-git clone https://github.com/yourusername/fast-cars.git
-cd fast-cars
-```
+2. **Create virtual environment:(Linux)**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+    For **Windows**:
 
-### 2. Set up a virtual environment
-Create and activate a virtual environment for Python:
+    ```bash
+    python -m venv venv
+    venv\Scripts\activate
+    ``` 
 
-```bash
-python3 -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-```
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### 3. Install the required dependencies
-Install all the required libraries and dependencies from `requirements.txt`:
+4. **Set up database:**
+   - Create database (inside MySQL shell):
+     ```sql
+     CREATE DATABASE fast_cars;
+     ```
+   - Import schema:
+     - Inside MySQL shell (if `schema.sql` is accessible):
+       ```sql
+       source schema.sql;
+       ```
+     - **Or from terminal** (not inside MySQL shell):
+       ```bash
+       mysql -u username -p fast_cars < schema.sql
+       ```
+       
+5. **Configure `main.py` database settings to appropriate username and password**
 
-```bash
-pip install -r requirements.txt
-```
+6. **Run the app:**
+   ```bash
+   python3 main.py
+   ```
 
-### 4. Create MySQL database
-Create the **MySQL database** for the application.
-
-- Open **XAMPP** or your MySQL setup.
-- Run the following SQL commands:
-
-```sql
-CREATE DATABASE fast_cars;
-```
-
-- Import the database schema by running:
-
-```bash
-source schema.sql
-```
-
-### 5. Configure MySQL credentials
-In the `main.py` file, update the database connection with your MySQL credentials:
-
-```python
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'yourusername'
-app.config['MYSQL_PASSWORD'] = 'yourpassword'
-app.config['MYSQL_DB'] = 'fast_cars'
-```
-
-### 6. Running the Application
-
-After setting up everything, you can run the Flask application with:
-
-```bash
-python main.py
-```
-
-Now, open your browser and visit `http://localhost:5000` to access the car rental system.
+   Visit: `http://localhost:5001`
 
 ## File Structure
 
 ```
 fast-cars/
-│
-├── app/
-│   ├── __init__.py
-│   ├── main.py
-│   ├── templates/
-│   │   ├── index.html
-│   │   ├── car_list.html
-│   │   ├── booking.html
-│   │   ├── contact.html
-│   │   └── dashboard.html
-│   ├── static/
-│   │   ├── css/
-│   │   ├── js/
-│   │   └── images/
-│   ├── models/
-│   │   ├── user.py
-│   │   ├── car.py
-│   │   └── booking.py
-│   └── forms/
-│       └── registration_form.py
-│
+├── images/
+├── static/
+├── templates/
+├── main.py
 ├── requirements.txt
 ├── schema.sql
 └── README.md
 ```
 
-## Usage
-
-Once the app is running, you can access the following pages:
-
-- **Home Page**: Displays a welcome message and car rental options.
-- **User Registration & Login**: Allows users to create an account and log in.
-- **Car Listings**: Displays available cars for rent with their details.
-- **Booking Page**: Allows users to book cars.
-- **Admin Login**: Use the hardcoded email `admin@admin.com` and password `adminpassword` to log in as an admin and access the admin dashboard.
-- **Admin Dashboard**: Admin can view users, bookings, and testimonials.
-- **Contact Page**: For users to get in touch with support.
-
-
-
 ## Acknowledgements
 
-- Flask for the web framework
-- MySQL for the database management system
-- XAMPP for setting up MySQL locally
-- The Bootstrap framework for styling
+- Flask
+- MySQL
+- XAMPP
+- Bootstrap
 
+## Contact Me
+
+Feel free to reach out if you have any questions, suggestions, or feedback.
+
+- Email: sadeeqsas14@gmail.com
+- [Twitter](https://twitter.com/sadiq__abubakar)
