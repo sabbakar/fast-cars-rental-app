@@ -20,7 +20,7 @@ app.config['MYSQL_HOST'] = '127.0.0.1'
 app.config['MYSQL_USER'] = '[your username]'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'fast_cars'
-app.secret_key = '423433242'
+app.secret_key = '[ADD YOUR SCRET KEY]'
 
 mysql = MySQL(app)
 
