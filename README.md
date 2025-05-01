@@ -2,6 +2,10 @@
 
 A car rental web application built with **Flask** and **MySQL**.
 
+## Demo
+
+[Watch Demo Video](https://drive.google.com/file/d/1GWAbL3QXgwUEc_bBxWdVz1ZBydbKsxK-/view?usp=sharing)
+
 ## Features
 
 - User registration, login, and account management
