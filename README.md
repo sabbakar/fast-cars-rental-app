@@ -15,6 +15,9 @@ A car rental web application built with **Flask** and **MySQL**.
   **Email:** `admin@admin.com` | **Password:** `admin`
 
 ## Other UI Features
+  - `app.html` serves as the base template for frontend layout (e.g. footer, navbar).
+  - Most templates inherit from `app.html` using Jinja templating.
+  - `index.html` is a standalone page and does not extend `app.html`.
   - **Dynamic Navigation Button**: The top-right button switches between "Login" and "Logout" based on the user's session state. If logged in as admin, it becomes "Admin Dashboard."
   - **Conditional Links**: "Book Now" button appears only when appropriate, with auto-redirection after login.
   - **Pre-filled Booking Form**: Automatically fills in car details if a user comes from a car listing page.
