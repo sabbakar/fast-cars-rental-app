@@ -2,9 +2,15 @@
 
 A car rental web application built with **Flask** and **MySQL**.
 
-## Demo
+### Backend Demo
+Watch the demo video showcasing the backend and admin features:
 
-[Watch Demo Video](https://drive.google.com/file/d/1GWAbL3QXgwUEc_bBxWdVz1ZBydbKsxK-/view?usp=sharing)
+[Backend Demo Video](https://drive.google.com/file/d/1GWAbL3QXgwUEc_bBxWdVz1ZBydbKsxK-/view?usp=sharing)
+
+### Frontend Demo
+Watch the demo video showcasing the frontend UI features:
+
+[Frontend Demo Video](https://drive.google.com/file/d/108AxfP9NSyPwILwmEF0oGHVoWCeEIesN/view?usp=sharing)
 
 ## Features
 
